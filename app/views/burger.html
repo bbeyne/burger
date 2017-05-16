@@ -1,0 +1,45 @@
+
+<div class="row">
+
+	<div class="col-sm-6">
+
+		<h3>Burgers list</h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th style="width: 50%">
+						<a ng-click="$ctrl.sortBy('name')" href class="sort"
+						ng-class="{ up: $ctrl.col === 'name' && !$ctrl.desc, down: $ctrl.col === 'name' && $ctrl.desc }">Name</a>
+						<input ng-model="name" type="text" class="form-control input-sm" placeholder="search ...">
+					</th>
+					<th>
+						<a ng-click="$ctrl.sortBy('toppings.length')" href class="sort"
+						ng-class="{ up: $ctrl.col === 'toppings.length' && !$ctrl.desc, down: $ctrl.col === 'toppings.length' && $ctrl.desc }">Toppings</a>
+						<select ng-model="toppings" class="form-control input-sm" >
+							<option value=""></option>
+							<option ng-value="topping" ng-repeat="topping in $ctrl.getToppings() track by $index">{{topping}}</option>
+						</select>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="burger in $ctrl.burgers | filter:{name,toppings} | orderBy:$ctrl.col:$ctrl.desc track by $index">
+					<td><a href="/burger/{{burger.id}}"> {{ burger.name }}</a></td>
+					<td >{{ burger.toppings.length}} : {{burger.toppings.join(', ') }}</td>
+					<td>		
+					<a href ng-click="$ctrl.deleteburger(burger)" class="btn btn-primary">
+						<span class="glyphicon glyphicon-trash"></span>
+						Delete Burger
+					</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="/burger" class="btn btn-primary">
+			<span class="glyphicon glyphicon-plus"></span>
+			Add Burger
+		</a>
+	</div>
+	
+	
+</div>

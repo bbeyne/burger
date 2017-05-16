@@ -1,0 +1,16 @@
+
+<h2>grgurhgrhgrhgprhgruhguirhgurhg...</h2>
+
+<img ng-src="https://www.gravatar.com/avatar/{{ $ctrl.md5 }}" ng-if="!$ctrl.displayGravatar" ng-click="$ctrl.change()">
+<div ng-if="$ctrl.displayGravatar" >
+    <strong ng-click="$ctrl.toggleGravatar()">{{ $ctrl.email }}</strong>
+    <form name="talkForm">    
+    <input type="text" ng-model="$ctrl.blabla" required ng-maxlength="5" class="form-control" placeholder="Yo!">
+    <button class="btn btn-block" ng-click="$ctrl.clic(talkForm)">yo!</button>
+    </form>
+
+</div>
+
+
+
+

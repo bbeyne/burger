@@ -1,0 +1,8 @@
+dta-gravatar {
+    display: inline-block;
+    margin: .5em;
+    padding: .2em;
+    border: 1px solid #ddd;
+    border-radius: .5em;
+    box-shadow: 10px 10px 10px #257;
+}

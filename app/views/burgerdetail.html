@@ -1,0 +1,44 @@
+<h3 ng-if="!$ctrl.burger.id">Add a new burger</h3>
+<h3 ng-if="$ctrl.burger.id">Edit this burger</h3>
+
+<form name="burgerForm" novalidate ng-submit="$ctrl.save(burgerForm)">
+
+    <div class="form-group">
+        <label for="burgername">Burger name *</label>
+        <input type="text" 
+            id="burgername"
+            name="name"
+            required
+            ng-model="$ctrl.burger.name"
+            class="form-control">
+        <p ng-if="burgerForm.name.$error.required && burgerForm.name.$touched" class="text-danger">required !</p>
+    </div>
+
+    <div class="form-group">
+        <label for="burgertoppings">Toppings</label>
+        <select
+            name="toppings" 
+            id="burgertoppings" 
+            multiple="true"
+            class="form-control"
+            ng-model="$ctrl.burger.toppings">
+                <option ng-value="topping.name" 
+                    ng-repeat="topping in $ctrl.toppings track by $index">
+                    {{ topping.name }}
+                </option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="burgercreator">Creator email</label>
+        <input type="email" 
+            name="creator"
+            id="burgercreator"
+            ng-model="$ctrl.burger.creator"
+            class="form-control">
+        <p ng-if="burgerForm.creator.$invalid" class="text-danger">email, morron</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary" 
+        ng-disabled="burgerForm.$invalid">save</button>
+</form>

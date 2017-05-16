@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Burger</title>
+	<script src="/bundle.js"></script>
+    <base href="/">
+</head>
+<body ng-app="app">
+
+<dta-game></dta-game>
+    <!-- <div ng-controller="MyController as $ctrl">
+    <dta-gravatar email="$ctrl.mail" on-talk="$ctrl.talk($event)"></dta-gravatar>
+    <br>
+    <a href="/">Home</a>
+    <a href='/game'>Jouer</a>
+    <div ng-view class="container"></div>
+    <div ng-controller="UserController as $ctrl">
+    	Bonjour {{$ctrl.getname()}}
+    </div>
+    <div class="test" ng-controller="VersionController as $ctrl">
+        <strong>{{ $ctrl.name }}</strong>
+        <span ng-if=$ctrl.etat>{{ $ctrl.version }}</span>
+        <button 
+            class="btn" 
+            ng-click="$ctrl.toggleVersion()">
+            Toggle VERSION
+        </button>
+    </div> -->
+    <!-- <div class="container" ng-controller="TabsController as $ctrl">
+
+
+       <ul class="nav nav-tabs">
+        <li ng-repeat="tab in $ctrl.tabs track by $index"
+        ng-class="{'active': $ctrl.tab === $index}">
+        <a ng-click="$ctrl.changeTab($index)" href>{{ tab.title }}</a>
+        </li>
+        <li class="pull-right">
+        <div class="btn-group">
+            <button ng-click="$ctrl.navigateTab(-1)"
+            class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-chevron-left"></span>                    
+        </button>
+        <button ng-click="$ctrl.navigateTab(+1)"
+        class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+        </div>
+        </li>
+        </ul>
+    <ng-include 
+            ng-repeat="tab in $ctrl.tabs track by $index"
+            ng-if="$ctrl.tab === $index"
+            src="$ctrl.getTemplate(tab)"></ng-include>
+</div> -->
+
+
+</body>
+</html>

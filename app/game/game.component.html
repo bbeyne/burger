@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div class="row" ng-if="$ctrl.running===0">
+        
+        <div class="col-sm-6">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <dta-toppings 
+                            toppings="$ctrl.toppings"
+                            on-select="$ctrl.selectTopping($event)"></dta-toppings> 
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <dta-recipe
+                            toppings="$ctrl.recipe"
+                            on-end="$ctrl.selectRecipe($event)"
+                            level="$ctrl.level"></dta-recipe>
+                    </th>
+
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+            
+        <div class="col-sm-6">
+            <dta-burger toppings="$ctrl.burger"></dta-burger>
+        </div>
+
+    </div>
+    <div class="row" ng-if="$ctrl.running===-1">
+        <div class="col-sm-12">
+            <h2>Game Over</h2>
+            <button ng-click="$ctrl.restart()" class="btn btn-primary">Restart</button>
+        </div>
+    </div>
+    <div class="row" ng-if="$ctrl.running===1">
+        <div class="col-sm-12">
+            <h2>Level {{$ctrl.level}} : Complete</h2>
+            <button ng-click="$ctrl.restart()" class="btn btn-primary">Next Level</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+
+<h3
+    ng-repeat="topping in $ctrl.toppings track by $index">
+    {{ topping }}<br>
+</h3>
+<br>
+
+<h2 align="right">
+<dta-countdown
+  on-end="$ctrl.end()"
+  on-start="$ctrl.start($event)"
+  time="$ctrl.time"></dta-countdown>
+  </h2>

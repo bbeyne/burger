@@ -1,0 +1,6 @@
+<button 
+    ng-repeat="topping in $ctrl.toppings track by $index"
+    ng-click="$ctrl.select(topping.name)"
+    class="btn">
+    {{ topping.name }}
+</button>
